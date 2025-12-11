@@ -32,6 +32,7 @@ DishLookup is a Node.js + Express backend API with MySQL (Sequelize) that allows
 ```bash
 git clone https://github.com/Gulshaba-Parveen/dishlookup.git
 cd dishlookup
+```bash
 
 Install dependencies:
 bash
@@ -107,4 +108,5 @@ npm run server – Start server with nodemon
 npm run start – Start server (production)
 
 npm run seed – Seed database
+
 
