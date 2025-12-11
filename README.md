@@ -1,109 +1,96 @@
-# DishLookup
+🍽️ Dish Lookup Backend Service
+📌 Overview
+This is a simple Node.js + MySQL backend service that allows users to search for restaurants based on a dish name. The system stores:
 
-DishLookup is a Node.js + Express backend API with MySQL (Sequelize) that allows users to search for restaurants based on dish name and price range. It returns the **top 10 restaurants** where the dish is ordered the most.
+Restaurants
 
----
+Their menu items
 
-## Features
+Orders placed for those items
 
-- Search restaurants by dish name with mandatory price range
-- Returns top 10 restaurants based on order count for the dish
-- Each result includes:
-  - Restaurant ID, name, and city
-  - Dish name and price
-  - Total order count
+When a user searches for a dish, the API returns the top 10 restaurants where that dish has been ordered the most, restricted by a mandatory price range filter.
 
----
+🚀 Features
+Search restaurants by dish name with price range filter
 
-## Technologies
+Returns restaurant details, dish name, dish price, and total order count
 
-- Node.js
-- Express.js
-- MySQL
-- Sequelize ORM
-- dotenv for environment variables
+Seed file included with sample restaurants, dishes, and orders
 
----
+Clean and well‑structured code using Sequelize ORM
 
-## Setup
+Hosted on Railway/Render (include your live URL here)
 
-1. Clone repository:
+🛠️ Tech Stack
+Node.js (Express framework)
 
-```bash
-git clone https://github.com/Gulshaba-Parveen/dishlookup.git
+MySQL (database)
+
+Sequelize (ORM)
+
+⚙️ Setup Instructions
+Clone the repository
+
+bash
+git clone https://github.com/<your-username>/dishlookup.git
 cd dishlookup
-Install dependencies:
+Install dependencies
 
 bash
-Copy code
 npm install
-Create a .env file in root:
+Configure database connection
 
-env
-Copy code
-DB_HOST=<your-db-host>
-DB_PORT=<your-db-port>
-DB_USER=<your-db-user>
-DB_PASSWORD=<your-db-password>
-DB_NAME=dishdb
-DB_SSL=true
-PORT=5000
-Seed the database:
+Create a .env file (do not commit this file)
 
-bash
-Copy code
-npm run seed
-Start the server:
+Add your DB credentials:
+
+Code
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=dishlookup
+DB_DIALECT=mysql
+Run seed script to populate sample data
 
 bash
-Copy code
-npm run server
-Server runs on http://localhost:5000.
+node seed/seed.js
+Start the server
 
-API
-Search Dishes
-sql
-Copy code
-GET /search/dishes
-Query Parameters:
-
-name (required) — dish name or part of it
-
-minPrice (required) — minimum price
-
-maxPrice (required) — maximum price
-
-Example:
-
-pgsql
-Copy code
+bash
+npm start
+📡 API Usage
+Endpoint
+Code
+GET /search/dishes?name=<dishName>&minPrice=<min>&maxPrice=<max>
+Example Request
+Code
 /search/dishes?name=biryani&minPrice=150&maxPrice=300
-Response:
-
+Example Response
 json
-Copy code
 {
   "restaurants": [
     {
-      "restaurantId": 1,
+      "restaurantId": 5,
       "restaurantName": "Hyderabadi Spice House",
       "city": "Hyderabad",
       "dishName": "Chicken Biryani",
       "dishPrice": 220,
-      "orderCount": 30
+      "orderCount": 96
     }
   ]
 }
-Deployment
-Render: Connect GitHub, add environment variables, start command npm run start.
-
-Railway: Connect GitHub, configure environment variables, start command node index.js.
-
-Live URL: https://dishlookup-1.onrender.com
-
-Scripts
-npm run server – Start server with nodemon
-
-npm run start – Start server (production)
-
-npm run seed – Seed database
+📂 Project Structure
+Code
+dishlookup/
+├── config/dbConfig.js
+├── model/
+│   ├── Restaurant.js
+│   ├── MenuItem.js
+│   ├── Order.js
+│   └── index.js
+├── routes/searchRoutes.js
+├── seed/seed.js
+├── index.js
+└── package.json
+🌐 Deployment
+This project is hosted on [Railway/Render]. Public URL: <your-live-url-here>
