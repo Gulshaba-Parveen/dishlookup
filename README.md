@@ -10,8 +10,8 @@ DishLookup is a Node.js + Express backend API with MySQL (Sequelize) that allows
 - Search restaurants by dish name with price range filter
 - Returns restaurant details, dish name, dish price, and total order count
 - Seed file included with sample restaurants, dishes, and orders.
-  - Clean and well‑structured code using Sequelize ORM
-  - Hosted on Render
+- Clean and well‑structured code using Sequelize ORM
+- Hosted on Render
 
 ---
 
@@ -107,3 +107,4 @@ npm run server – Start server with nodemon
 npm run start – Start server (production)
 
 npm run seed – Seed database
+
