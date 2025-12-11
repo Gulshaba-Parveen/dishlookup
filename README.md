@@ -34,12 +34,12 @@ git clone https://github.com/Gulshaba-Parveen/dishlookup.git
 cd dishlookup
 ```
 
-Install dependencies:
+## Install dependencies:
 ```bash
 npm install
 ```
 
-Create a .env file in the root directory with the following variables:
+## Create a .env file in the root directory with the following variables:
 ```bash
 DB_HOST=<your-db-host>
 DB_PORT=<your-db-port>
@@ -51,12 +51,12 @@ PORT=5000
 
 ```
 
-Seed the database:
+## Seed the database:
 ```bash
 npm run seed
 ```
 
-Start the server:
+## Start the server:
 ```bash
 npm run server
 ```
@@ -64,21 +64,21 @@ npm run server
 Server runs on http://localhost:5000.
 
 # API
-# Search Dishes: 
+## Search Dishes: 
 - GET /search/dishes
-# Query Parameters:
+## Query Parameters:
 ```bash
 name (required) — dish name or part of it
 minPrice (required) — minimum price
 maxPrice (required) — maximum price
 ```
 
-Example:
+## Example:
 ```bash
 https://dishlookup-1.onrender.com/search/dishes?name=biryani&minPrice=150&maxPrice=300
 ```
 
-Response:
+## Response:
 ```bash
 json
 {
@@ -90,14 +90,6 @@ json
       "dishName": "Mutton Biryani",
       "dishPrice": 300,
       "orderCount": 15
-    },
-    {
-      "restaurantId": 3,
-      "restaurantName": "Mehfil Restaurant",
-      "city": "Hyderabad",
-      "dishName": "Paneer Biryani",
-      "dishPrice": 280,
-      "orderCount": 10
     }
   ]
 }
@@ -105,9 +97,10 @@ json
 ```
 
 
-# Deployment
-**Render**: Connect GitHub, add environment variables, start command npm run start.
-**Live URL**: https://dishlookup-1.onrender.com
+## Deployment
+- **Render**: Connect GitHub, add environment variables, start command npm run start.
+- **Live URL**: https://dishlookup-1.onrender.com
+
 
 
 
