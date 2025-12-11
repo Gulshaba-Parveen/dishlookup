@@ -37,31 +37,50 @@ cd dishlookup
 Install dependencies:
 ```bash
 npm install
-npm run seed
-npm run server
-Server runs on http://localhost:5000.
 ```
 
-API
-Search Dishes
-sql
-Copy code
-GET /search/dishes
-Query Parameters:
+Create a .env file in the root directory with the following variables:
+```bash
+DB_HOST=<your-db-host>
+DB_PORT=<your-db-port>
+DB_USER=<your-db-user>
+DB_PASSWORD=<your-db-password>
+DB_NAME=dishdb
+DB_SSL=true
+PORT=5000
+
+```
+
+Seed the database:
+```bash
+npm run seed
+```
+
+Start the server:
+```bash
+npm run server
+```
+
+Server runs on http://localhost:5000.
+
+# API
+# Search Dishes: 
+- GET /search/dishes
+# Query Parameters:
 ```bash
 name (required) — dish name or part of it
-
 minPrice (required) — minimum price
-
 maxPrice (required) — maximum price
 ```
 
 Example:
 ```bash
 https://dishlookup-1.onrender.com/search/dishes?name=biryani&minPrice=150&maxPrice=300
+```
+
 Response:
+```bash
 json
-Copy code
 {
   "restaurants": [
     {
@@ -86,9 +105,10 @@ Copy code
 ```
 
 
-Deployment
-Render: Connect GitHub, add environment variables, start command npm run start.
-Live URL: https://dishlookup-1.onrender.com
+# Deployment
+**Render**: Connect GitHub, add environment variables, start command npm run start.
+**Live URL**: https://dishlookup-1.onrender.com
+
 
 
 
