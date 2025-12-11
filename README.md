@@ -48,19 +48,18 @@ sql
 Copy code
 GET /search/dishes
 Query Parameters:
+```bash
 name (required) — dish name or part of it
 
 minPrice (required) — minimum price
 
 maxPrice (required) — maximum price
+```
 
 Example:
-
-pgsql
-Copy code
-/search/dishes?name=biryani&minPrice=150&maxPrice=300
+```bash
+https://dishlookup-1.onrender.com/search/dishes?name=biryani&minPrice=150&maxPrice=300
 Response:
-
 json
 Copy code
 {
@@ -69,25 +68,27 @@ Copy code
       "restaurantId": 1,
       "restaurantName": "Hyderabadi Spice House",
       "city": "Hyderabad",
-      "dishName": "Chicken Biryani",
-      "dishPrice": 220,
-      "orderCount": 30
+      "dishName": "Mutton Biryani",
+      "dishPrice": 300,
+      "orderCount": 15
+    },
+    {
+      "restaurantId": 3,
+      "restaurantName": "Mehfil Restaurant",
+      "city": "Hyderabad",
+      "dishName": "Paneer Biryani",
+      "dishPrice": 280,
+      "orderCount": 10
     }
   ]
 }
+
+```
+
+
 Deployment
 Render: Connect GitHub, add environment variables, start command npm run start.
-
-Railway: Connect GitHub, configure environment variables, start command node index.js.
-
 Live URL: https://dishlookup-1.onrender.com
-
-Scripts
-npm run server – Start server with nodemon
-
-npm run start – Start server (production)
-
-npm run seed – Seed database
 
 
 
