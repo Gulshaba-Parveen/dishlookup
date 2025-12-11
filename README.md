@@ -2,6 +2,11 @@
 
 # 📌 Overview
 DishLookup is a Node.js + Express backend API with MySQL (Sequelize) that allows users to search for restaurants based on dish name and price range. It returns the **top 10 restaurants** where the dish is ordered the most.
+## Live Project:
+- https://dishlookup-1.onrender.com
+
+## Example API Query:
+- https://dishlookup-1.onrender.com/search/dishes?name=bir&minPrice=100&maxPrice=500
 
 ---
 
@@ -74,9 +79,7 @@ maxPrice (required) — maximum price
 ```
 
 ## Example:
-```bash
-https://dishlookup-1.onrender.com/search/dishes?name=biryani&minPrice=150&maxPrice=300
-```
+- https://dishlookup-1.onrender.com/search/dishes?name=biryani&minPrice=150&maxPrice=300
 
 ## Response:
 ```bash
@@ -100,6 +103,7 @@ json
 ## Deployment
 - **Render**: Connect GitHub, add environment variables, start command npm run start.
 - **Live URL**: https://dishlookup-1.onrender.com
+
 
 
 
